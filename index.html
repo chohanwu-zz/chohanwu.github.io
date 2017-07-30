@@ -1,1 +1,123 @@
-Hello World
+<!DOCTYPE HTML>
+<html xml:lang="en" lang="en">
+
+<head>
+    <title>CSE442 | Citiviz</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/mapDateSlider.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet">
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/countUp.js"></script>
+    <script type="text/javascript" src="js/simpleLine.js"></script>
+    <script type="text/javascript" src="js/topojson.min.js"></script>
+</head>
+
+<body>
+    <script>
+        document.body.className += ' fade-out';
+    </script>
+    <div id="fullpage">
+        <div class="section" id="titleSection" style="display: table">
+            <div class="row" style="height:50px">
+                <div class="header">
+                    <div class="title" style="margin-left: 1.5%; float: left; font-size: 56px;">Health Expenditure</div>
+                    <!-- <div class="subtitle" style="float: left; padding-top: 42px; padding-left: 20px; font-size:18px">How much money did you spend on health?</div> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="column" style="width: 100%; height: 100%; display:table">
+                    <div style="display: table-cell; vertical-align: middle;">
+                        <p>
+                            On average, U.S. citizens spend 8.84% annually on health expenditure. And there are three states where citizens spend the
+                            highest proportion of their income in health expenditure.
+                        </p>
+                        <div class="row">
+                            <div class='cost_div' id="healthExpenditure" style="font-size: 64px; ">
+                                $
+                            </div>
+                            <div class='cost_div' id="healthExpenditureDate" style="font-size: 14px; ">
+                                Median Heath Expenditure as of 2011
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class='cost_div' id="healthExpenditurePercent" style="font-size: 64px;">
+                                %
+                            </div>
+                            <div class='cost_div' id="healthExpenditureDate" style="font-size: 14px;">
+                                Health Expenditure Proportion as of 2011
+                            </div>
+                        </div>
+                        <div class="row" style="height: 40%; width: 100%;">
+                            <div class="ordered_states">
+                                <!-- <ol class="top_three_states"> -->
+                                <div class="column" style="width: 22.5%; margin-left: 16.25%; margin-top:30px;">
+                                    <item id='btn_dc'><img src="Images/DC.png" style="width:150px; height:150px;" />1st: DC</item>
+                                </div>
+                                <div class="column" style="width: 22.5%; margin-top:30px;">
+                                    <item id='btn_kentucky'><img src="Images/kentucky.png" style="width:150px; height:150px;" />2nd: Kentucky</item>
+                                </div>
+                                <div class="column" style="width: 22.5%; margin-right: 16.25%; margin-top:30px;">
+                                    <item id='btn_wv'><img src="Images/wv.png" style="width:150px; height:150px;" />3rd: West Virginia</item>
+                                </div>
+                                <!-- </ol> -->
+                            </div>
+                            <div class="center-page"><span></span><a class='see_more_a' href='#secondPage'>See more</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="column" id="mapdiv" style="height: 100%; width: 50%; margin-left: 5%;display: table;">
+                <div class="row" id="bigmap" style="height: 100%; padding-top: 2.5%; display: table-cell; vertical-align: middle; text-align: center">
+                </div>
+
+            </div>
+            <div class="column" style="height: 100%; width: 60%; margin-left: -19%; padding-right: 0%; display: table">
+                <div class="row" id="miniHousing" style="height: 40%; diplay: table-cell; text-align: center">
+                </div>
+                <div class="row" id="radialBusiness" style="height: 60%; display: table-cell; vertical-align: middle; text-align: center">
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="display: table; width: 100%">
+            <div class="row" style="height:47.5%; width: 100%;">
+                <div class="header" style="padding-top: 5%;">
+                    <div class="title" style="margin-left: 1.5%; float: left; font-size: 36px;">Sources</div>
+                </div>
+                <div class="column" style="width: 100%; margin-left: 4%; margin-right: 2%">
+
+                    <p>
+                        In this project, different data sources was chosen to demonstrate the healthcare expenditure data across 50 states and D.C.
+                        in the U.S. The data sources includes "<a href="http://www,censusus.gov"
+                            target="_blank">www,censusus.gov</a> - Median Household Income in the United States - 2011", and
+                        "<a href="http://www.bls.gov" target="_blank">www.bls.gov</a> - Consumer expenditure - 2011".
+                    </p>
+                </div>
+                <div class="header" style="padding-top: 5%;">
+                    <div class="title" style="margin-left: 1.5%; float: left; font-size: 36px;">About Me</div>
+
+                </div>
+                <div class="column" style="width: 100%; margin-left: 4%; margin-right: 2%">
+                    <p>CS 498 DDV- Final Project</p>
+                    <p>Cho-Han Wu (chohanw2)</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="js/miniHousing.js"></script>
+    <script type="text/javascript" src="js/radialBusiness.js"></script> -->
+    <script type="text/javascript" src="js/USMapExpenditurePercent.js"></script>
+
+    <script type="text/javascript" src="js/d3-annotation.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+/* .row {
+     display: table-row; 
+} */
+
+.cost_div{
+    color: #131F33;
+    text-align: center;
+    /* padding-left: 100px; */
+}
+
+div.ordered_states{
+    width: 100%;
+    text-align: center;
+}
+ul.top_three_states{
+    /* margin: 30px auto;
+    text-align: center */
+    text-align: center;
+    margin: 2px auto;
+    line-height: 1.4;
+    padding-left: 0;
+}
+.top_three_states li {
+        display: inline;
+        text-align: center;
+        margin: 30px;
+}
+.top_three_states li img{
+    margin-bottom: 30px;
+}
+
+.top_three_states li span{
+    margin: 0px auto;
+    width: 200px;
+    margin-bottom: 0px;
+    height: 20px;
+    float: left;
+}
+
+p {
+    font-size: 24px;
+    width: 700px;
+    margin: 30px auto;
+}
+
+/* Scroll Down */
+.center-page, .scroll-down {
+	padding-top: 70px;
+}
+
+
+.center-page span, .scroll-down span, .center-page a {
+	position: absolute;
+	bottom: 130px;
+	left: 50%;
+	width: 48px;
+	height: 48px;
+	margin-left: -12px;
+	border-left: 4px solid #000;
+	border-bottom: 4px solid #000;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	-webkit-animation: sdb05 1.5s infinite;
+	animation: sdb05 1.5s infinite;
+	box-sizing: border-box;
+}
+@-webkit-keyframes sdb05 {
+	0% {
+		-webkit-transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+@keyframes sdb05 {
+	0% {
+		transform: rotate(-45deg) translate(0, 0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: rotate(-45deg) translate(-20px, 20px);
+		opacity: 0;
+	}
+}
+
+item {
+    cursor: default;
+    background-color: #dbdbdb;
+    border-radius: 6px;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+}
+
+item:hover {
+    opacity: .7;
+}
+
+a:link {
+    color: #ffcf5c;
+    /*#E68FAC  */
+    text-decoration: none;
+}
+
+a:hover {
+
+}
+
+a:visited {
+    color: #ffcf5c;
+    /*#E68FAC  */
+    text-decoration: none;
+}
+
+/* Header */
+div.header {
+	width: 100%;
+	height: 50px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 2.5%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.column {
+	float: left;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    -moz-user-select: none:
+    -ms-user-select: none
+}
+
+.grabbable {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    color: black;
+    font-family: "Open Sans";
+    width: 320px;
+    padding: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white /*#f9f9f9*/;
+    min-width: 320px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 12px;
+    padding: 2px;
+    text-decoration: none;
+    display: block;
+    -webkit-user-select: none;
+    -moz-user-select: none:
+    -ms-user-select: none
+}
+
+a:hover {
+ cursor:pointer;
+}
+
+.zipRegionHover {
+	stroke: black;
+}
+
+.zipRegionSelected {
+  stroke: #131F33;
+}
+
+button:focus {outline:0;}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+  #titleSection{
+    background-image: url(../Images/health_img1_blur.png);
+    background-position: center;
+    width: 100%;
+}  
+
+/*d3 graph */
+  .states {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+  }
+
+  .states-choropleth {
+    fill: #ccc;
+  }
+
+  #tooltip-container {
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border: 1px solid;
+    display: block;
+  }
+
+  .tooltip_key {
+    font-weight: bold;
+  }
+
+  .tooltip_value {
+    margin-left: 20px;
+    float: right;
+  }
