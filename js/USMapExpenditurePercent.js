@@ -79,17 +79,17 @@ var USMapExpenditurePercent = function (target) {
             } : null;
         }
 
-        function valueFormat(d) {
-            if (d > 1000000000) {
-                return Math.round(d / 1000000000 * 10) / 10 + "B";
-            } else if (d > 1000000) {
-                return Math.round(d / 1000000 * 10) / 10 + "M";
-            } else if (d > 1000) {
-                return Math.round(d / 1000 * 10) / 10 + "K";
-            } else {
-                return d;
-            }
-        }
+        // function valueFormat(d) {
+        //     if (d > 1000000000) {
+        //         return Math.round(d / 1000000000 * 10) / 10 + "B";
+        //     } else if (d > 1000000) {
+        //         return Math.round(d / 1000000 * 10) / 10 + "M";
+        //     } else if (d > 1000) {
+        //         return Math.round(d / 1000 * 10) / 10 + "K";
+        //     } else {
+        //         return d;
+        //     }
+        // }
 
         var COLOR_FIRST = config.color1, COLOR_LAST = config.color2;
 
@@ -145,6 +145,9 @@ var USMapExpenditurePercent = function (target) {
 
             name_id_map = {};
             id_name_map = {};
+            id_expense_map = {};
+            id_income_map = {};
+            id_percent_map = {};
 
             for (var i = 0; i < names.length; i++) {
                 name_id_map[names[i].name] = names[i].id;
@@ -154,6 +157,9 @@ var USMapExpenditurePercent = function (target) {
             data.forEach(function (d) {
                 var id = name_id_map[d[MAP_STATE]];
                 valueById.set(id, +d[MAP_VALUE]);
+                id_expense_map[id] = d.Health_Expense;
+                id_income_map[id] = d.Income;
+                id_percent_map[id] = d.Percent;
             });
             // console.log(valueById);
 
@@ -253,7 +259,7 @@ var USMapExpenditurePercent = function (target) {
                     //     }
                     // })
                     .on("click", function (d, element) {        // ON CLICK
-
+                        console.log(d);
                         svg.selectAll("path")
                             .transition()
                             .attr("stroke", "white")
@@ -264,6 +270,11 @@ var USMapExpenditurePercent = function (target) {
                             .transition()
                             .attr("stroke", "#131F33")
                             .attr("stroke-width", 4);
+                        var percentFormatedDecimal = formatDecimal(id_percent_map[d.id]);
+                        d3.select("#map_health_expense_num").text("$"+id_expense_map[d.id]);
+                        d3.select("#map_income_num").text("$"+id_income_map[d.id]);
+                        d3.select("#map_percent_num").text(percentFormatedDecimal);
+                        
                         // d3.select(this).moveToFront();
 
                         // self.selectedRegion = d3.select(this);
@@ -292,7 +303,8 @@ var USMapExpenditurePercent = function (target) {
 
                     });
 
-                // var colorKeyWidth = 20, colorKeyHeight = 325, blockHeight = 40;
+                // //Legend
+                // var colorKeyWidth = 40, colorKeyHeight = 325, blockHeight = 30;
                 // var colorKeySVG = svg.append("g")
                 //     .attr("transform", "translate(10, " + (mapHeight - colorKeyHeight - 10) + ")");
 

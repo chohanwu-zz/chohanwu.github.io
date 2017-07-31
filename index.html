@@ -32,8 +32,8 @@
                 <div class="column" style="width: 100%; height: 100%; display:table">
                     <div style="display: table-cell; vertical-align: middle;">
                         <p>
-                            On average, U.S. citizens spend 8.48% annually on health expenditure. And there are three states where citizens spend the
-                            highest proportion of their income in health expenditure.
+                            On average, U.S. citizens spend 8.48% of their annual income ($4,268) on healthcare. And there are three states where citizens spend the
+                            highest proportion of their income in healthcare service. Check out those states:
                         </p>
                         <div class="row">
                             <div class='cost_div' id="healthExpenditure" style="font-size: 64px; ">
@@ -73,15 +73,30 @@
         </div>
 
         <div class="section">
-            <div class="column" id="mapdiv" style="height: 100%; width: 50%; margin-left: 5%;display: table;">
+            <div class="column" id="mapdiv" style="height: 100%; width: 30%; margin-left: 5%;display: table;">
                 <div class="row" id="bigmap" style="height: 100%; padding-top: 2.5%; display: table-cell; vertical-align: middle; text-align: center">
+                <div style="text-align:left; padding-bottom:30px;">Hover on the map to see health spendings (%) of each state, and click the map to see details.</div>
                 </div>
-
+                
             </div>
-            <div class="column" style="height: 100%; width: 60%; margin-left: -19%; padding-right: 0%; display: table">
-                <div class="row" id="miniHousing" style="height: 40%; diplay: table-cell; text-align: center">
+            <div class="column" style="height: 100%; width: 40%; margin-left: -19%; padding-right: 0%; display: table">
+                <div class="row" id="map_health_expense" style="height: 25%; margin-top:10%; text-align: center">
+                    Health Expense
+                    <div class='cost_div' id="map_health_expense_num" style="font-size: 64px; ">
+                        $ 
+                    </div>
                 </div>
-                <div class="row" id="radialBusiness" style="height: 60%; display: table-cell; vertical-align: middle; text-align: center">
+                <div class="row" id="map_income" style="height: 25%; text-align: center">
+                    Annual Income
+                    <div class='cost_div' id="map_income_num" style="font-size: 64px; ">
+                        $ 
+                    </div>
+                </div>
+                <div class="row" id="map_percent" style="height: 25%; margin-bottom:10%; text-align: center"> <!--vertical-align: middle; -->
+                    Health Expenditure Percent
+                    <div class='cost_div' id="map_percent_num" style="font-size: 64px; ">
+                        %
+                    </div>
                 </div>
             </div>
         </div>
